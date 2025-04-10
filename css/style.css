@@ -12,33 +12,145 @@ section {
 
 /* Additional styles for focus states */
 a:focus, button:focus {
-    outline: 2px solid #0F3460;
+    outline: 2px solid #2D3047;
     outline-offset: 2px;
-}
-
-/* Hover effect on cards */
-.rounded-lg {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.rounded-lg:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-}
-
-/* Contact link hover animation */
-a.hover\:underline:hover {
-    text-decoration-thickness: 2px;
-    text-underline-offset: 2px;
 }
 
 /* Button focus state */
 .bg-primary:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(15, 52, 96, 0.5);
+    box-shadow: 0 0 0 3px rgba(45, 48, 71, 0.5);
 }
 
-/* Add a bit more contrast to the gray background for accessibility */
-.bg-gray-50 {
-    background-color: #f8f9fa;
+/* Elegant hover effects for cards */
+.shadow-elegant {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hover\:shadow-elegant:hover {
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.15);
+}
+
+/* Subtle hover transform effects */
+.hover\:transform {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover\:transform:hover {
+    transform: translateY(-3px);
+}
+
+/* Typography refinements */
+.font-display {
+    letter-spacing: -0.015em;
+}
+
+h1, h2, h3 {
+    letter-spacing: -0.02em;
+}
+
+/* Contact link hover animation */
+a.hover\:text-accent {
+    transition: color 0.3s ease;
+}
+
+/* Subtle background patterns */
+.bg-light-bg {
+    background-color: #F7F9FC;
+    position: relative;
+}
+
+/* Simple gradient overlay for hero section */
+.gradient-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(255,255,255,0));
+    pointer-events: none;
+}
+
+/* Custom animation for CTA buttons */
+@keyframes pulse-subtle {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.3);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+    }
+}
+
+.pulse-animation {
+    animation: pulse-subtle 2s infinite;
+}
+
+/* Custom grid for design showcase */
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Sophisticated underline effect for links */
+.hover-underline {
+    position: relative;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.hover-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Improved mobile menu transitions */
+#mobile-menu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: top center;
+}
+
+#mobile-menu.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* Subtle parallax effect for decorative elements */
+.subtle-parallax {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .subtle-parallax:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Ensure footer sticks to bottom on short pages */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }

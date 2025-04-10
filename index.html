@@ -13,11 +13,17 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#0F3460', // Deep blue for CTAs
+                        'primary': '#2D3047', // Sophisticated dark blue-gray
+                        'accent': '#FF6B6B', // Accent color for highlights
+                        'light-bg': '#F7F9FC', // Light background for sections
                     },
                     fontFamily: {
                         'sans': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif'],
                     },
+                    boxShadow: {
+                        'elegant': '0 10px 30px -10px rgba(0, 0, 0, 0.1)',
+                    }
                 }
             }
         }
@@ -26,22 +32,28 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter + Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="font-sans bg-white text-gray-800">
     <!-- Header Section -->
-    <header class="container mx-auto px-4 py-6 flex justify-between items-center">
-        <div class="text-2xl font-bold text-primary">RedoMySite</div>
+    <header class="container mx-auto px-4 py-6 flex justify-between items-center border-b border-gray-100">
+        <div class="flex items-center">
+            <div class="text-2xl font-display font-bold text-primary tracking-tight">Redo<span class="text-accent">My</span>Site</div>
+            <div class="hidden ml-2 sm:flex items-center">
+                <span class="h-4 w-px bg-gray-300 mx-3"></span>
+                <span class="text-xs uppercase tracking-widest text-gray-500">Design Studio</span>
+            </div>
+        </div>
         <nav class="hidden md:block">
             <ul class="flex space-x-8">
-                <li><a href="#why-redesign" class="text-gray-700 hover:text-primary">Why Redesign</a></li>
-                <li><a href="#how-it-works" class="text-gray-700 hover:text-primary">How It Works</a></li>
-                <li><a href="#why-us" class="text-gray-700 hover:text-primary">Why Us</a></li>
-                <li><a href="#contact" class="text-gray-700 hover:text-primary">Contact</a></li>
+                <li><a href="#why-redesign" class="text-gray-700 hover:text-primary transition-colors duration-200">Why Redesign</a></li>
+                <li><a href="#how-it-works" class="text-gray-700 hover:text-primary transition-colors duration-200">How It Works</a></li>
+                <li><a href="#why-us" class="text-gray-700 hover:text-primary transition-colors duration-200">Why Us</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-200">Contact</a></li>
             </ul>
         </nav>
         <button class="md:hidden text-gray-700" id="mobile-menu-button">
@@ -52,57 +64,85 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden bg-white w-full py-4 px-6 shadow-md md:hidden">
         <ul class="space-y-4">
-            <li><a href="#why-redesign" class="block text-gray-700 hover:text-primary">Why Redesign</a></li>
-            <li><a href="#how-it-works" class="block text-gray-700 hover:text-primary">How It Works</a></li>
-            <li><a href="#why-us" class="block text-gray-700 hover:text-primary">Why Us</a></li>
-            <li><a href="#contact" class="block text-gray-700 hover:text-primary">Contact</a></li>
+            <li><a href="#why-redesign" class="block text-gray-700 hover:text-primary transition-colors duration-200">Why Redesign</a></li>
+            <li><a href="#how-it-works" class="block text-gray-700 hover:text-primary transition-colors duration-200">How It Works</a></li>
+            <li><a href="#why-us" class="block text-gray-700 hover:text-primary transition-colors duration-200">Why Us</a></li>
+            <li><a href="#contact" class="block text-gray-700 hover:text-primary transition-colors duration-200">Contact</a></li>
         </ul>
     </div>
 
     <main>
         <!-- Hero Section -->
         <section class="container mx-auto px-4 py-16 md:py-24">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-                    Outshine your competitors with a clean, professional website that earns trust and drives business.
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-4 text-center">
+                    <span class="inline-block text-xs uppercase tracking-widest text-accent font-semibold mb-3">Web Design Excellence</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight mb-8 text-center">
+                    Outshine your competitors with a <span class="relative inline-block px-1">
+                        <span class="absolute inset-x-0 bottom-1 h-3 bg-accent opacity-20"></span>
+                        <span class="relative">clean, professional</span>
+                    </span> website that earns trust.
                 </h1>
-                <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+                <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto text-center leading-relaxed">
                     We don't sell. We show. You share your current site or business details, and we build your new homepage—live and working. If you like what you see, you pay. If not, no questions asked. No catch. No follow-up.
                 </p>
-                <a href="#contact" class="inline-block bg-primary text-white font-medium py-3 px-8 rounded-md hover:bg-opacity-90 transition-colors text-lg">
-                    Rebuild your site and preview for free
-                </a>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#contact" class="inline-block bg-primary text-white font-medium py-3 px-8 rounded-md hover:bg-opacity-90 transition-colors text-lg shadow-elegant">
+                        Rebuild your site and preview for free
+                    </a>
+                    <a href="#how-it-works" class="inline-block font-medium py-3 px-6 text-primary hover:text-accent transition-colors text-lg">
+                        See how it works <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- Why Redesign Section -->
-        <section id="why-redesign" class="bg-gray-50 py-16 md:py-24">
-            <div class="container mx-auto px-4">
+        <section id="why-redesign" class="bg-light-bg py-16 md:py-24 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/3 h-full opacity-5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="h-full w-full">
+                    <path fill="currentColor" d="M95,50c0,24.85-20.15,45-45,45S5,74.85,5,50S25.15,5,50,5S95,25.15,95,50z"></path>
+                </svg>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Your Website Might Be Costing You More Than You Think</h2>
-                    
-                    <div class="mb-10 text-gray-700">
-                        <p class="mb-4">In today's digital marketplace, your website is often the first impression potential customers have of your business. An outdated or unprofessional website doesn't just fail to attract clients—it actively drives them away.</p>
-                        
-                        <p class="mb-4">Over 75% of consumers judge a company's credibility based on their website design. And with attention spans shorter than ever, you have mere seconds to establish trust before visitors bounce.</p>
-                        
-                        <p class="mb-4">Many business owners know they need a redesign but feel trapped in an endless cycle of frustration with designers who overpromise, overcharge, and underdeliver.</p>
+                    <div class="mb-12 text-center">
+                        <span class="inline-block text-xs uppercase tracking-widest text-accent font-semibold mb-3">Critical Insights</span>
+                        <h2 class="text-2xl md:text-3xl font-display font-bold mb-4">Your Website Might Be Costing You <span class="relative inline-block">
+                            <span class="absolute inset-x-0 bottom-1 h-3 bg-accent opacity-20"></span>
+                            <span class="relative">More Than You Think</span>
+                        </span></h2>
                     </div>
                     
-                    <div class="bg-white p-8 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-semibold mb-4">Why a Redesign Matters</h3>
-                        <ul class="space-y-3">
+                    <div class="mb-12 text-gray-700 max-w-3xl mx-auto">
+                        <p class="mb-6 leading-relaxed">In today's digital marketplace, your website is often the first impression potential customers have of your business. An outdated or unprofessional website doesn't just fail to attract clients—it actively drives them away.</p>
+                        
+                        <div class="flex items-center mb-6 p-4 border-l-4 border-accent bg-white shadow-elegant">
+                            <span class="text-4xl text-accent font-display font-bold mr-4">75%</span>
+                            <p class="text-gray-700">of consumers judge a company's credibility based on their website design. With attention spans shorter than ever, you have mere seconds to establish trust.</p>
+                        </div>
+                        
+                        <p class="mb-6 leading-relaxed">Many business owners know they need a redesign but feel trapped in an endless cycle of frustration with designers who overpromise, overcharge, and underdeliver.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-elegant border border-gray-100">
+                        <h3 class="text-xl font-display font-semibold mb-6 flex items-center">
+                            <span class="inline-block w-10 h-px bg-accent mr-3"></span>
+                            Why a Redesign Matters
+                        </h3>
+                        <ul class="space-y-4">
                             <li class="flex items-start">
-                                <span class="text-primary mr-2"><i class="fas fa-check-circle mt-1"></i></span>
-                                <span>Websites that grab attention and keep people scrolling</span>
+                                <span class="flex-shrink-0 bg-accent bg-opacity-10 text-accent rounded-full p-1 mr-4 mt-1"><i class="fas fa-check text-sm"></i></span>
+                                <span class="text-gray-800">Websites that grab attention and keep people scrolling, reducing bounce rates by up to 40%</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-primary mr-2"><i class="fas fa-check-circle mt-1"></i></span>
-                                <span>Beat bigger brands with a sharper, more focused design</span>
+                                <span class="flex-shrink-0 bg-accent bg-opacity-10 text-accent rounded-full p-1 mr-4 mt-1"><i class="fas fa-check text-sm"></i></span>
+                                <span class="text-gray-800">Beat bigger brands with a sharper, more focused design that communicates your unique value</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-primary mr-2"><i class="fas fa-check-circle mt-1"></i></span>
-                                <span>Build credibility—and charge more because you look like the real deal</span>
+                                <span class="flex-shrink-0 bg-accent bg-opacity-10 text-accent rounded-full p-1 mr-4 mt-1"><i class="fas fa-check text-sm"></i></span>
+                                <span class="text-gray-800">Build credibility—and charge more because you look like the real deal in a crowded market</span>
                             </li>
                         </ul>
                     </div>
@@ -111,93 +151,161 @@
         </section>
 
         <!-- How It Works Section -->
-        <section id="how-it-works" class="py-16 md:py-24">
-            <div class="container mx-auto px-4">
+        <section id="how-it-works" class="py-16 md:py-24 relative">
+            <div class="absolute left-0 top-1/3 w-24 h-24 bg-accent opacity-5 rounded-full"></div>
+            <div class="absolute right-0 bottom-1/4 w-32 h-32 bg-primary opacity-5 rounded-full"></div>
+            <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center">Exactly How It Works—No Surprises</h2>
+                    <div class="mb-12 text-center">
+                        <span class="inline-block text-xs uppercase tracking-widest text-accent font-semibold mb-3">Transparent Process</span>
+                        <h2 class="text-2xl md:text-3xl font-display font-bold mb-4">Exactly How It Works<span class="text-accent">—</span>No Surprises</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto">Our streamlined approach eliminates risk and uncertainty, giving you complete control at every step.</p>
+                    </div>
                     
-                    <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-8 lg:gap-12">
-                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-                            <div class="flex items-center mb-4">
-                                <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">1</div>
-                                <h3 class="text-xl font-semibold">Share Your Site</h3>
-                            </div>
-                            <p class="text-gray-700">You share your current website or business link so we understand your brand and goals.</p>
-                        </div>
+                    <div class="relative">
+                        <!-- Connection line for desktop -->
+                        <div class="hidden md:block absolute left-1/2 top-8 bottom-8 w-px bg-gray-200 -ml-px"></div>
                         
-                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-                            <div class="flex items-center mb-4">
-                                <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">2</div>
-                                <h3 class="text-xl font-semibold">Free Preview</h3>
+                        <div class="space-y-12 relative z-10">
+                            <!-- Step 1 -->
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 mb-6 md:mb-0 md:pr-12 md:text-right">
+                                    <h3 class="text-xl font-display font-semibold mb-2">Share Your Vision</h3>
+                                    <p class="text-gray-700">You share your current website or business details so we understand your brand, audience, and goals.</p>
+                                </div>
+                                <div class="md:w-1/2 md:pl-12 flex justify-start md:justify-start">
+                                    <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center font-bold relative shadow-elegant">
+                                        <span>01</span>
+                                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-accent rounded-full border-2 border-white"></span>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="text-gray-700">We rebuild the homepage for free (preview only) so you can see the quality of our work.</p>
-                        </div>
-                        
-                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-                            <div class="flex items-center mb-4">
-                                <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">3</div>
-                                <h3 class="text-xl font-semibold">Like It? Pay & Go Live</h3>
+                            
+                            <!-- Step 2 -->
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 md:pr-12 flex justify-end md:order-2">
+                                    <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center font-bold relative shadow-elegant">
+                                        <span>02</span>
+                                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-accent rounded-full border-2 border-white"></span>
+                                    </div>
+                                </div>
+                                <div class="md:w-1/2 md:pl-12 md:order-1 mt-6 md:mt-0">
+                                    <h3 class="text-xl font-display font-semibold mb-2">See the Preview</h3>
+                                    <p class="text-gray-700">We rebuild your homepage for free as a preview so you can experience the quality and direction of our work.</p>
+                                </div>
                             </div>
-                            <p class="text-gray-700">You like the preview? You pay, and we finalize the site, making it live for your business.</p>
-                        </div>
-                        
-                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
-                            <div class="flex items-center mb-4">
-                                <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">4</div>
-                                <h3 class="text-xl font-semibold">Total Ownership</h3>
+                            
+                            <!-- Step 3 -->
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 mb-6 md:mb-0 md:pr-12 md:text-right">
+                                    <h3 class="text-xl font-display font-semibold mb-2">Approve & Launch</h3>
+                                    <p class="text-gray-700">You like what you see? Only then do you pay, and we finalize the site, making it live for your business.</p>
+                                </div>
+                                <div class="md:w-1/2 md:pl-12 flex justify-start md:justify-start">
+                                    <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center font-bold relative shadow-elegant">
+                                        <span>03</span>
+                                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-accent rounded-full border-2 border-white"></span>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="text-gray-700">You own everything. No strings. No lock-in. Your website, your assets, your control.</p>
+                            
+                            <!-- Step 4 -->
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 md:pr-12 flex justify-end md:order-2">
+                                    <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center font-bold relative shadow-elegant">
+                                        <span>04</span>
+                                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-accent rounded-full border-2 border-white"></span>
+                                    </div>
+                                </div>
+                                <div class="md:w-1/2 md:pl-12 md:order-1 mt-6 md:mt-0">
+                                    <h3 class="text-xl font-display font-semibold mb-2">Complete Ownership</h3>
+                                    <p class="text-gray-700">You own everything—no strings, no lock-in, no hidden agenda. Your website, your assets, your control.</p>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    
+                    <div class="mt-16 text-center">
+                        <a href="#contact" class="inline-block bg-primary text-white font-medium py-3 px-8 rounded-md hover:bg-opacity-90 transition-colors text-lg shadow-elegant">
+                            Start the Process
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Why Us Section -->
-        <section id="why-us" class="bg-gray-50 py-16 md:py-24">
-            <div class="container mx-auto px-4">
+        <section id="why-us" class="bg-light-bg py-16 md:py-24 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full opacity-3 pointer-events-none">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 0 10 L 40 10 M 10 0 L 10 40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" stroke-width="0" stroke="currentColor" class="text-primary opacity-5"/>
+                </svg>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center">Built for Speed, Ownership, and Total Clarity</h2>
+                    <div class="mb-12 text-center">
+                        <span class="inline-block text-xs uppercase tracking-widest text-accent font-semibold mb-3">Our Approach</span>
+                        <h2 class="text-2xl md:text-3xl font-display font-bold mb-4">Built for <span class="relative inline-block">
+                            <span class="absolute inset-x-0 bottom-1 h-3 bg-accent opacity-20"></span>
+                            <span class="relative">Speed, Clarity & Control</span>
+                        </span></h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto">What makes us different is our approach to design—minimalist, intentional, and focused on what matters most.</p>
+                    </div>
                     
-                    <div class="space-y-4">
-                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm flex items-start">
-                            <span class="text-primary mr-4 text-xl"><i class="fas fa-bolt mt-1"></i></span>
-                            <div>
-                                <h3 class="font-semibold mb-1">No Bloated Templates</h3>
-                                <p class="text-gray-700">We don't use WordPress themes or bloated templates that slow down your site and limit customization.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-elegant group hover:border-accent transition-colors duration-300">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg text-primary flex items-center justify-center mr-4 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-bolt text-xl"></i>
+                                </div>
+                                <h3 class="font-display font-semibold text-lg md:text-xl">Handcrafted Code</h3>
                             </div>
+                            <p class="text-gray-700 leading-relaxed">We don't use bulky WordPress themes or bloated templates. Every website is built with clean, efficient code that's optimized for performance and scalability.</p>
                         </div>
                         
-                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm flex items-start">
-                            <span class="text-primary mr-4 text-xl"><i class="fas fa-tachometer-alt mt-1"></i></span>
-                            <div>
-                                <h3 class="font-semibold mb-1">Lightning-Fast Loading</h3>
-                                <p class="text-gray-700">Your site will load in under 2 seconds, keeping visitors engaged and improving your search rankings.</p>
+                        <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-elegant group hover:border-accent transition-colors duration-300">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg text-primary flex items-center justify-center mr-4 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-tachometer-alt text-xl"></i>
+                                </div>
+                                <h3 class="font-display font-semibold text-lg md:text-xl">Lightning-Fast Speed</h3>
                             </div>
+                            <p class="text-gray-700 leading-relaxed">Your site will load in under 2 seconds, keeping visitors engaged and dramatically improving your search rankings and conversion rates.</p>
                         </div>
                         
-                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm flex items-start">
-                            <span class="text-primary mr-4 text-xl"><i class="fas fa-lock-open mt-1"></i></span>
-                            <div>
-                                <h3 class="font-semibold mb-1">Complete Ownership</h3>
-                                <p class="text-gray-700">You own everything — domain, files, content. No proprietary systems that lock you in.</p>
+                        <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-elegant group hover:border-accent transition-colors duration-300">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg text-primary flex items-center justify-center mr-4 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-palette text-xl"></i>
+                                </div>
+                                <h3 class="font-display font-semibold text-lg md:text-xl">Design That Converts</h3>
                             </div>
+                            <p class="text-gray-700 leading-relaxed">Our designs aren't just beautiful—they're strategically crafted to guide visitors toward action, with clear pathways and intuitive interfaces.</p>
                         </div>
                         
-                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm flex items-start">
-                            <span class="text-primary mr-4 text-xl"><i class="fas fa-dollar-sign mt-1"></i></span>
-                            <div>
-                                <h3 class="font-semibold mb-1">No Hidden Fees</h3>
-                                <p class="text-gray-700">No monthly fees unless you want ongoing support. One clear price for your complete website.</p>
+                        <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-elegant group hover:border-accent transition-colors duration-300">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg text-primary flex items-center justify-center mr-4 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-lock-open text-xl"></i>
+                                </div>
+                                <h3 class="font-display font-semibold text-lg md:text-xl">Complete Ownership</h3>
                             </div>
+                            <p class="text-gray-700 leading-relaxed">You own everything—domain, files, content. No proprietary systems, no dependency on us, and no unexpected lock-in to ongoing services.</p>
                         </div>
                         
-                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm flex items-start">
-                            <span class="text-primary mr-4 text-xl"><i class="fas fa-eye mt-1"></i></span>
-                            <div>
-                                <h3 class="font-semibold mb-1">See Before You Pay</h3>
-                                <p class="text-gray-700">We start by showing you a free preview. You only pay if you like what we've created for you.</p>
+                        <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-elegant group hover:border-accent transition-colors duration-300 md:col-span-2">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-lg text-primary flex items-center justify-center mr-4 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-eye text-xl"></i>
+                                </div>
+                                <h3 class="font-display font-semibold text-lg md:text-xl">See Before You Pay</h3>
                             </div>
+                            <p class="text-gray-700 leading-relaxed">Unlike traditional agencies that collect 50% upfront, we create your homepage preview for free. You only pay when you're genuinely impressed with what we've built—eliminating all risk from your decision.</p>
                         </div>
                     </div>
                 </div>
@@ -205,30 +313,78 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 md:py-24">
+        <section id="contact" class="py-20 md:py-32 relative">
+            <div class="absolute -top-1 left-0 right-0 h-16 bg-light-bg" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);"></div>
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-6">Let's make your business look like it should.</h2>
-                    <p class="text-lg text-gray-700 mb-8">Ready to take the first step toward a website that truly represents your business? Contact us today.</p>
-                    
-                    <div class="mb-8">
-                        <a href="mailto:contact@redomysite.com" class="text-primary text-xl font-medium hover:underline">
-                            <i class="far fa-envelope mr-2"></i>contact@redomysite.com
-                        </a>
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-12 text-center">
+                        <span class="inline-block text-xs uppercase tracking-widest text-accent font-semibold mb-3">Get Started</span>
+                        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Let's make your business <span class="relative inline-block">
+                            <span class="absolute inset-x-0 bottom-1 h-3 bg-accent opacity-20"></span>
+                            <span class="relative">look like it should</span>
+                        </span></h2>
+                        <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">Ready to take the first step toward a website that truly represents your business and converts visitors into customers?</p>
                     </div>
                     
-                    <a href="#" class="inline-block bg-primary text-white font-medium py-3 px-8 rounded-md hover:bg-opacity-90 transition-colors text-lg" id="request-preview-btn">
-                        Request Free Homepage Preview
-                    </a>
+                    <div class="bg-white p-10 rounded-lg shadow-elegant border border-gray-100 text-center">
+                        <div class="mb-8 inline-block p-4 bg-light-bg rounded-full">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white">
+                                <i class="far fa-paper-plane text-2xl"></i>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-display font-semibold mb-6">Contact us today</h3>
+                        
+                        <div class="mb-8 flex items-center justify-center">
+                            <a href="mailto:contact@redomysite.com" class="text-primary text-xl font-medium hover:text-accent transition-colors">
+                                <i class="far fa-envelope mr-2"></i>contact@redomysite.com
+                            </a>
+                        </div>
+                        
+                        <a href="#" class="inline-block bg-primary text-white font-medium py-4 px-10 rounded-md hover:bg-opacity-90 transition-colors text-lg shadow-elegant transform hover:-translate-y-1 duration-200" id="request-preview-btn">
+                            Request Free Homepage Preview
+                        </a>
+                        
+                        <p class="mt-6 text-sm text-gray-500">We'll respond within 1 business day with next steps</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 py-8 mt-10">
-        <div class="container mx-auto px-4 text-center text-gray-600">
-            <p>© 2023 RedoMySite. All rights reserved.</p>
+    <footer class="bg-primary text-white py-12 mt-10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                    <div class="mb-6 md:mb-0">
+                        <div class="text-2xl font-display font-bold tracking-tight">Redo<span class="text-accent">My</span>Site</div>
+                        <p class="text-gray-300 mt-2">Professional website redesign services</p>
+                    </div>
+                    <nav>
+                        <ul class="flex flex-wrap justify-center space-x-8">
+                            <li><a href="#why-redesign" class="text-gray-300 hover:text-white transition-colors duration-200">Why Redesign</a></li>
+                            <li><a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors duration-200">How It Works</a></li>
+                            <li><a href="#why-us" class="text-gray-300 hover:text-white transition-colors duration-200">Why Us</a></li>
+                            <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 RedoMySite. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
