@@ -48,14 +48,24 @@
                 <span class="text-xs uppercase tracking-widest text-gray-500">Design Studio</span>
             </div>
         </div>
-        <nav class="hidden md:block">
-            <ul class="flex space-x-8">
-                <li><a href="#why-redesign" class="text-gray-700 hover:text-primary transition-colors duration-200">Why Redesign</a></li>
-                <li><a href="#how-it-works" class="text-gray-700 hover:text-primary transition-colors duration-200">How It Works</a></li>
-                <li><a href="#why-us" class="text-gray-700 hover:text-primary transition-colors duration-200">Why Us</a></li>
-                <li><a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-200">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="flex items-center">
+            <div class="hidden md:flex mr-8 space-x-4">
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#why-redesign" class="text-gray-700 hover:text-primary transition-colors duration-200">Why Redesign</a></li>
+                    <li><a href="#how-it-works" class="text-gray-700 hover:text-primary transition-colors duration-200">How It Works</a></li>
+                    <li><a href="#why-us" class="text-gray-700 hover:text-primary transition-colors duration-200">Why Us</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
         <button class="md:hidden text-gray-700" id="mobile-menu-button">
             <i class="fas fa-bars text-xl"></i>
         </button>
@@ -63,12 +73,20 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden bg-white w-full py-4 px-6 shadow-md md:hidden">
-        <ul class="space-y-4">
+        <ul class="space-y-4 mb-4">
             <li><a href="#why-redesign" class="block text-gray-700 hover:text-primary transition-colors duration-200">Why Redesign</a></li>
             <li><a href="#how-it-works" class="block text-gray-700 hover:text-primary transition-colors duration-200">How It Works</a></li>
             <li><a href="#why-us" class="block text-gray-700 hover:text-primary transition-colors duration-200">Why Us</a></li>
             <li><a href="#contact" class="block text-gray-700 hover:text-primary transition-colors duration-200">Contact</a></li>
         </ul>
+        <div class="flex space-x-4 pt-4 border-t border-gray-100">
+            <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
     </div>
 
     <main>
@@ -322,9 +340,12 @@
 
                         <h3 class="text-2xl font-display font-semibold mb-8">Contact us today</h3>
 
-                        <div class="mb-8 flex items-center justify-center">
+                        <div class="mb-8 flex flex-col items-center justify-center space-y-4">
                             <a href="mailto:contact@redomysite.com" class="text-primary text-xl font-medium hover:text-accent transition-colors">
                                 <i class="far fa-envelope mr-2"></i>contact@redomysite.com
+                            </a>
+                            <a href="#" class="text-primary text-xl font-medium hover:text-accent transition-colors">
+                                <i class="fab fa-whatsapp mr-2"></i>Contact via WhatsApp
                             </a>
                         </div>
 
@@ -361,13 +382,10 @@
                     <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 RedoMySite. All rights reserved.</p>
                     <div class="flex space-x-6">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                            <i class="fab fa-whatsapp text-lg"></i>
+                            <i class="fab fa-twitter text-lg"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-instagram text-lg"></i>
                         </a>
                     </div>
                 </div>
