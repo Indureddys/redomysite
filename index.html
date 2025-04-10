@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RedoMySite - Professional website redesign services that earn trust and drive business. See your new site before you pay.">
+    <title>RedoMySite - Professional Website Redesign Services</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0F3460', // Deep blue for CTAs
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans bg-white text-gray-800">
+    <!-- Header Section -->
+    <header class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <div class="text-2xl font-bold text-primary">RedoMySite</div>
+        <nav class="hidden md:block">
+            <ul class="flex space-x-8">
+                <li><a href="#why-redesign" class="text-gray-700 hover:text-primary">Why Redesign</a></li>
+                <li><a href="#how-it-works" class="text-gray-700 hover:text-primary">How It Works</a></li>
+                <li><a href="#why-us" class="text-gray-700 hover:text-primary">Why Us</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-primary">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="md:hidden text-gray-700" id="mobile-menu-button">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-white w-full py-4 px-6 shadow-md md:hidden">
+        <ul class="space-y-4">
+            <li><a href="#why-redesign" class="block text-gray-700 hover:text-primary">Why Redesign</a></li>
+            <li><a href="#how-it-works" class="block text-gray-700 hover:text-primary">How It Works</a></li>
+            <li><a href="#why-us" class="block text-gray-700 hover:text-primary">Why Us</a></li>
+            <li><a href="#contact" class="block text-gray-700 hover:text-primary">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="container mx-auto px-4 py-16 md:py-24">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                    Outshine your competitors with a clean, professional website that earns trust and drives business.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+                    We don't sell. We show. You share your current site or business details, and we build your new homepage—live and working. If you like what you see, you pay. If not, no questions asked. No catch. No follow-up.
+                </p>
+                <a href="#contact" class="inline-block bg-primary text-white font-medium py-3 px-8 rounded-md hover:bg-opacity-90 transition-colors text-lg">
+                    Rebuild your site and preview for free
+                </a>
+            </div>
+        </section>
+
+        <!-- Why Redesign Section -->
+        <section id="why-redesign" class="bg-gray-50 py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Your Website Might Be Costing You More Than You Think</h2>
+                    
+                    <div class="mb-10 text-gray-700">
+                        <p class="mb-4">In today's digital marketplace, your website is often the first impression potential customers have of your business. An outdated or unprofessional website doesn't just fail to attract clients—it actively drives them away.</p>
+                        
+                        <p class="mb-4">Over 75% of consumers judge a company's credibility based on their website design. And with attention spans shorter than ever, you have mere seconds to establish trust before visitors bounce.</p>
+                        
+                        <p class="mb-4">Many business owners know they need a redesign but feel trapped in an endless cycle of frustration with designers who overpromise, overcharge, and underdeliver.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">Why a Redesign Matters</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2"><i class="fas fa-check-circle mt-1"></i></span>
+                                <span>Websites that grab attention and keep people scrolling</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2"><i class="fas fa-check-circle mt-1"></i></span>
+                                <span>Beat bigger brands with a sharper, more focused design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2"><i class="fas fa-check-circle mt-1"></i></span>
+                                <span>Build credibility—and charge more because you look like the real deal</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center">Exactly How It Works—No Surprises</h2>
+                    
+                    <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-8 lg:gap-12">
+                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">1</div>
+                                <h3 class="text-xl font-semibold">Share Your Site</h3>
+                            </div>
+                            <p class="text-gray-700">You share your current website or business link so we understand your brand and goals.</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">2</div>
+                                <h3 class="text-xl font-semibold">Free Preview</h3>
+                            </div>
+                            <p class="text-gray-700">We rebuild the homepage for free (preview only) so you can see the quality of our work.</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">3</div>
+                                <h3 class="text-xl font-semibold">Like It? Pay & Go Live</h3>
+                            </div>
+                            <p class="text-gray-700">You like the preview? You pay, and we finalize the site, making it live for your business.</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">4</div>
+                                <h3 class="text-xl font-semibold">Total Ownership</h3>
+                            </div>
+                            <p class="text-gray-700">You own everything. No strings. No lock-in. Your website, your assets, your control.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section id="why-us" class="bg-gray-50 py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center">Built for Speed, Ownership, and Total Clarity</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm flex items-start">
+                            <span class="text-primary mr-4 text-xl"><i class="fas fa-bolt mt-1"></i></span>
+                            <div>
+                                <h3 class="font-semibold mb-1">No Bloated Templates</h3>
+                                <p class="text-gray-700">We don't use WordPress themes or bloated templates that slow down your site and limit customization.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm flex items-start">
+                            <span class="text-primary mr-4 text-xl"><i class="fas fa-tachometer-alt mt-1"></i></span>
+                            <div>
+                                <h3 class="font-semibold mb-1">Lightning-Fast Loading</h3>
+                                <p class="text-gray-700">Your site will load in under 2 seconds, keeping visitors engaged and improving your search rankings.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm flex items-start">
+                            <span class="text-primary mr-4 text-xl"><i class="fas fa-lock-open mt-1"></i></span>
+                            <div>
+                                <h3 class="font-semibold mb-1">Complete Ownership</h3>
+                                <p class="text-gray-700">You own everything — domain, files, content. No proprietary systems that lock you in.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm flex items-start">
+                            <span class="text-primary mr-4 text-xl"><i class="fas fa-dollar-sign mt-1"></i></span>
+                            <div>
+                                <h3 class="font-semibold mb-1">No Hidden Fees</h3>
+                                <p class="text-gray-700">No monthly fees unless you want ongoing support. One clear price for your complete website.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm flex items-start">
+                            <span class="text-primary mr-4 text-xl"><i class="fas fa-eye mt-1"></i></span>
+                            <div>
+                                <h3 class="font-semibold mb-1">See Before You Pay</h3>
+                                <p class="text-gray-700">We start by showing you a free preview. You only pay if you like what we've created for you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6">Let's make your business look like it should.</h2>
+                    <p class="text-lg text-gray-700 mb-8">Ready to take the first step toward a website that truly represents your business? Contact us today.</p>
+                    
+                    <div class="mb-8">
+                        <a href="mailto:contact@redomysite.com" class="text-primary text-xl font-medium hover:underline">
+                            <i class="far fa-envelope mr-2"></i>contact@redomysite.com
+                        </a>
+                    </div>
+                    
+                    <a href="#" class="inline-block bg-primary text-white font-medium py-3 px-8 rounded-md hover:bg-opacity-90 transition-colors text-lg" id="request-preview-btn">
+                        Request Free Homepage Preview
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-8 mt-10">
+        <div class="container mx-auto px-4 text-center text-gray-600">
+            <p>© 2023 RedoMySite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

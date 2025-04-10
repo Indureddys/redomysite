@@ -1,0 +1,44 @@
+/* Custom styles beyond Tailwind */
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Extra spacing for section targets to account for fixed header */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* Additional styles for focus states */
+a:focus, button:focus {
+    outline: 2px solid #0F3460;
+    outline-offset: 2px;
+}
+
+/* Hover effect on cards */
+.rounded-lg {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rounded-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Contact link hover animation */
+a.hover\:underline:hover {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+}
+
+/* Button focus state */
+.bg-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(15, 52, 96, 0.5);
+}
+
+/* Add a bit more contrast to the gray background for accessibility */
+.bg-gray-50 {
+    background-color: #f8f9fa;
+}
