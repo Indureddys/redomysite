@@ -40,7 +40,22 @@
 </head>
 <body class="font-sans bg-white text-gray-800">
     <!-- Header Section -->
-    <header class="container mx-auto px-4 py-6 flex justify-between items-center border-b border-gray-100">
+    <div class="bg-light-bg border-b border-gray-100">
+        <!-- Top bar with social icons -->
+        <div class="container mx-auto px-4 py-2 flex justify-end">
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200 text-sm md:text-base">
+                    <i class="fab fa-twitter"></i>
+                    <span class="sr-only">Twitter</span>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200 text-sm md:text-base">
+                    <i class="fab fa-instagram"></i>
+                    <span class="sr-only">Instagram</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <header class="container mx-auto px-4 py-5 flex justify-between items-center">
         <div class="flex items-center">
             <div class="text-2xl font-display font-bold text-primary tracking-tight">Redo<span class="text-accent">My</span>Site</div>
             <div class="hidden ml-2 sm:flex items-center">
@@ -49,14 +64,6 @@
             </div>
         </div>
         <div class="flex items-center">
-            <div class="hidden md:flex mr-8 space-x-4">
-                <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
             <nav class="hidden md:block">
                 <ul class="flex space-x-8">
                     <li><a href="#why-redesign" class="text-gray-700 hover:text-primary transition-colors duration-200">Why Redesign</a></li>
@@ -79,12 +86,14 @@
             <li><a href="#why-us" class="block text-gray-700 hover:text-primary transition-colors duration-200">Why Us</a></li>
             <li><a href="#contact" class="block text-gray-700 hover:text-primary transition-colors duration-200">Contact</a></li>
         </ul>
-        <div class="flex space-x-4 pt-4 border-t border-gray-100">
-            <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200">
+        <div class="flex justify-center space-x-6 pt-4 border-t border-gray-100">
+            <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200 text-lg">
                 <i class="fab fa-twitter"></i>
+                <span class="sr-only">Twitter</span>
             </a>
-            <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200">
+            <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-200 text-lg">
                 <i class="fab fa-instagram"></i>
+                <span class="sr-only">Instagram</span>
             </a>
         </div>
     </div>
