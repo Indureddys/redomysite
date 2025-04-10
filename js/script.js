@@ -36,22 +36,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Request Preview button functionality
-    const requestPreviewBtn = document.getElementById('request-preview-btn');
-    if (requestPreviewBtn) {
-        requestPreviewBtn.addEventListener('click', function(e) {
+    // Contact form functionality
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Scroll to contact section
-            const contactSection = document.getElementById('contact');
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-            }
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
             
-            // Simple alert to inform user what would happen
-            setTimeout(() => {
-                alert('In a production environment, this would open a contact form or lead to a detailed contact page. Please email contact@redomysite.com to request your free preview.');
-            }, 500);
+            try {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbytom_iqbOvmE5SNYEB6km9S53h8G2AgujJpjqmkJ-z3bCdVWB4FS7Z20YRBWzjNTY8yA/exec', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('Thank you! Your message has been sent successfully. We will get back to you within 1 business day.');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            } catch (error) {
+                alert('Sorry, there was an error sending your message. Please try again or email us directly at contact@redomysite.com');
+                console.error('Error:', error);
+            }
         });
     }
 
