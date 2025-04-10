@@ -368,17 +368,14 @@
                                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
                                 <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" placeholder="Your email address">
                             </div>
-                            <div class="mb-5">
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                                <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors" placeholder="How can we help you?"></textarea>
-                            </div>
+
                         </form>
 
                         <a href="#" class="inline-block bg-primary text-white font-medium py-3 px-8 rounded-md hover:bg-opacity-90 transition-colors text-lg shadow-elegant transform hover:-translate-y-1 duration-200" id="request-preview-btn">
                             Request Free Homepage Preview
                         </a>
 
-                        <p class="mt-6 text-sm text-gray-500">We'll respond within 1 business day with next steps</p>
+                        <p class="mt-6 text-sm text-gray-500">We'll respond to you shortly with next steps</p>
                     </div>
                 </div>
             </div>
@@ -420,5 +417,39 @@
 
     <!-- Custom JS -->
     <script src="js/script.js"></script>
+    <script>
+      // Google Apps Script Web App URL
+      const SHEET_URL = "https://script.google.com/macros/s/AKfycbxcQ6UFkEM8CYE80mrtbY3QWiM5tQ8Z77Qp-CA2z1f8fEjcQba9Isc8SQQJDIwnztEW9w/exec";
+
+      // Use querySelector to select the contact form by its classes
+      const contactForm = document.querySelector("form.mb-8.text-left");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", function(e) {
+          e.preventDefault(); // Prevent the default form submission
+
+          // Get form values
+          const name = contactForm.querySelector("input[name='name']").value;
+          const email = contactForm.querySelector("input[name='email']").value;
+
+          // Send form data to your Google Sheet via the Apps Script URL
+          fetch(SHEET_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: name, email: email })
+          })
+          .then(response => response.json())
+          .then(result => {
+            alert("Details submitted successfully!");
+            contactForm.reset(); // Clear the form after submission
+          })
+          .catch(error => {
+            alert("Error submitting details!");
+            console.error("Error:", error);
+          });
+        });
+      }
+    </script>
+
 </body>
 </html>
