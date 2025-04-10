@@ -1,0 +1,55 @@
+# Replit Prompt – High-Trust Website Redesign Landing Page
+
+Build a **clean, fast-loading, single-page business website** using **HTML, Tailwind CSS**, and **vanilla JS (if needed)**.
+
+The tone should **evoke trust, reliability, and clarity**—no animations, stock photos, or unnecessary flair. This is for a service provider offering website redesigns to businesses, mainly in the US/UK.
+
+## 🔧 Design Guidelines:
+- Minimal, high-contrast design (white background, black/gray text, navy or deep blue CTA)
+- Clear vertical spacing between sections
+- Font: Tailwind's default sans-serif (or optionally `font-inter`)
+- Mobile responsive layout
+- Use only Tailwind classes; no external styling frameworks
+
+## 📐 Structure:
+### 1. Hero Section
+- Headline: “Outshine your competitors with a clean, professional website that earns trust and drives business.”
+- Sub-headline: “We don’t sell. We show. You share your current site or business details, and we build your new homepage—live and working. If you like what you see, you pay. If not, no questions asked. No catch. No follow-up.”
+- CTA Button: “Rebuild your site and preview for free”
+
+### 2. Why Redesign Section
+- Title: “Your Website Might Be Costing You More Than You Think”
+- Body: Paragraphs about trust, bounce, outdated look, frustration with designers
+- Bullet list under: “Why a Redesign Matters”
+    - Websites that grab attention and keep people scrolling
+    - Beat bigger brands with a sharper, more focused design
+    - Build credibility—and charge more because you look like the real deal
+
+### 3. How It Works Section
+- Title: “Exactly How It Works—No Surprises”
+- 4-step ordered list:
+    1. You share your current website or business link
+    2. We rebuild the homepage for free (preview only)
+    3. You like it? You pay, and we go live
+    4. You own everything. No strings. No lock-in.
+
+### 4. Why Us Section
+- Title: “Built for Speed, Ownership, and Total Clarity”
+- 5 trust bullets:
+    - We don’t use WordPress themes or bloated templates
+    - Your site will load in under 2 seconds
+    - You own everything — domain, files, content
+    - No monthly fees unless you want support
+    - We start by showing you a free preview. You only pay if you like it
+
+### 5. Let’s Talk / Contact Section
+- Title: “Let’s make your business look like it should.”
+- Email: contact@yourdomain.com
+- CTA Button: “Request Free Homepage Preview”
+
+## 🧠 Tech Requirements:
+- Structure the code cleanly: `index.html`, `css/style.css`, and `js/script.js`
+- Add HTML comment markers (`<!-- Hero Section -->`, etc.) for easy editing
+- Add meta title and description tags for SEO
+- No backend or form logic needed—this is static
+- Must be ready to deploy via Netlify or Vercel with no additional configuration
