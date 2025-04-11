@@ -437,28 +437,33 @@
           const email = contactForm.querySelector("input[name='email']").value;
 
           // Send form data to your Google Sheet via the Apps Script URL
-          fetch(SHEET_URL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: name, email: email })
-          })
-          .then(response => response.json())
-          .then(result => {
-            const messageBox = document.getElementById("form-message");
-messageBox.textContent = "Thanks! We'll be in touch shortly.";
-messageBox.style.color = "green";
-messageBox.style.display = "block";
+         fetch(SHEET_URL, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name: name, email: email })
+})
+.then(response => response.text()) // Read raw response as text
+.then(text => {
+  console.log("⬅️ Raw Response from Server:", text);
 
-contactForm.reset(); // Clear the form after submission
-          })
-          .catch(error => {
-            const messageBox = document.getElementById("form-message");
-messageBox.textContent = "Oops! Something went wrong. Please try again.";
-messageBox.style.color = "red";
-messageBox.style.display = "block";
+  try {
+    const result = JSON.parse(text);
+    console.log("✅ Parsed JSON:", result);
 
-            console.error("Error:", error);
-          });
+    const messageBox = document.getElementById("form-message");
+    messageBox.textContent = "Thanks! We'll be in touch shortly.";
+    messageBox.style.color = "green";
+    messageBox.style.display = "block";
+
+  } catch (err) {
+    console.error("❌ JSON parsing failed:", err);
+    alert("Something went wrong while processing the server response.");
+  }
+})
+.catch(error => {
+  console.error("❌ Fetch failed:", error);
+  alert("Oops! Something went wrong. Please try again.");
+});
         });
       }
     </script>
