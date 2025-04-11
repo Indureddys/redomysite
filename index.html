@@ -422,11 +422,6 @@
     <!-- Custom JS -->
     <script src="js/script.js"></script>
     <script>
-      // Google Apps Script Web App URL
-      const SHEET_URL = "https://script.google.com/macros/s/AKfycbxuvGi34ngI7xob1gVfMsx4sj6ohAT8m6lMXk5EL43p5Ekjt4cOQa4XiFqGSZCPlJk6HQ/exec";
-
-      // Use querySelector to select the contact form by its classes
-    <script>
   const SHEET_URL = "https://script.google.com/macros/s/AKfycbxuvGi34ngI7xob1gVfMsx4sj6ohAT8m6lMXk5EL43p5Ekjt4cOQa4XiFqGSZCPlJk6HQ/exec";
 
   window.onload = function () {
@@ -446,56 +441,21 @@
         })
         .then(response => response.text())
         .then(text => {
-          console.log("⬅️ Raw Response from Server:", text);
-
           try {
             const result = JSON.parse(text);
-            console.log("✅ Parsed JSON:", result);
-
             const messageBox = document.getElementById("form-message");
             messageBox.textContent = "Thanks! We'll be in touch shortly.";
             messageBox.style.color = "green";
             messageBox.style.display = "block";
-
             contactForm.reset();
           } catch (err) {
-            console.error("❌ JSON parsing failed:", err);
             alert("Something went wrong while processing the server response.");
           }
         })
         .catch(error => {
-          console.error("❌ Fetch failed:", error);
           alert("Oops! Something went wrong. Please try again.");
         });
       });
     }
   };
 </script>
-.then(response => response.text()) // Read raw response as text
-.then(text => {
-  console.log("⬅️ Raw Response from Server:", text);
-
-  try {
-    const result = JSON.parse(text);
-    console.log("✅ Parsed JSON:", result);
-
-    const messageBox = document.getElementById("form-message");
-    messageBox.textContent = "Thanks! We'll be in touch shortly.";
-    messageBox.style.color = "green";
-    messageBox.style.display = "block";
-
-  } catch (err) {
-    console.error("❌ JSON parsing failed:", err);
-    alert("Something went wrong while processing the server response.");
-  }
-})
-.catch(error => {
-  console.error("❌ Fetch failed:", error);
-  alert("Oops! Something went wrong. Please try again.");
-});
-        });
-      }
-    </script>
-
-</body>
-</html>
