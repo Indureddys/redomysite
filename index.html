@@ -444,11 +444,19 @@
           })
           .then(response => response.json())
           .then(result => {
-            alert("Details submitted successfully!");
-            contactForm.reset(); // Clear the form after submission
+            const messageBox = document.getElementById("form-message");
+messageBox.textContent = "Thanks! We'll be in touch shortly.";
+messageBox.style.color = "green";
+messageBox.style.display = "block";
+
+contactForm.reset(); // Clear the form after submission
           })
           .catch(error => {
-            alert("Error submitting details!");
+            const messageBox = document.getElementById("form-message");
+messageBox.textContent = "Oops! Something went wrong. Please try again.";
+messageBox.style.color = "red";
+messageBox.style.display = "block";
+
             console.error("Error:", error);
           });
         });
