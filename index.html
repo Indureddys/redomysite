@@ -426,22 +426,52 @@
       const SHEET_URL = "https://script.google.com/macros/s/AKfycbxuvGi34ngI7xob1gVfMsx4sj6ohAT8m6lMXk5EL43p5Ekjt4cOQa4XiFqGSZCPlJk6HQ/exec;
 
       // Use querySelector to select the contact form by its classes
-      const contactForm = document.querySelector("form.mb-8.text-left");
+      <script>
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycbxuvGi34ngI7xob1gVfMsx4sj6ohAT8m6lMXk5EL43p5Ekjt4cOQa4XiFqGSZCPlJk6HQ/exec";
 
-      if (contactForm) {
-        contactForm.addEventListener("submit", function(e) {
-          e.preventDefault(); // Prevent the default form submission
+  window.onload = function () {
+    const contactForm = document.querySelector("form.mb-8.text-left");
 
-          // Get form values
-          const name = contactForm.querySelector("input[name='name']").value;
-          const email = contactForm.querySelector("input[name='email']").value;
+    if (contactForm) {
+      contactForm.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-          // Send form data to your Google Sheet via the Apps Script URL
-         fetch(SHEET_URL, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ name: name, email: email })
-})
+        const name = contactForm.querySelector("input[name='name']").value;
+        const email = contactForm.querySelector("input[name='email']").value;
+
+        fetch(SHEET_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email })
+        })
+        .then(response => response.text())
+        .then(text => {
+          console.log("⬅️ Raw Response from Server:", text);
+
+          try {
+            const result = JSON.parse(text);
+            console.log("✅ Parsed JSON:", result);
+
+            const messageBox = document.getElementById("form-message");
+            messageBox.textContent = "Thanks! We'll be in touch shortly.";
+            messageBox.style.color = "green";
+            messageBox.style.display = "block";
+
+            contactForm.reset();
+          } catch (err) {
+            console.error("❌ JSON parsing failed:", err);
+            alert("Something went wrong while processing the server response.");
+          }
+        })
+        .catch(error => {
+          console.error("❌ Fetch failed:", error);
+          alert("Oops! Something went wrong. Please try again.");
+        });
+      });
+    }
+  };
+</script>
+
 .then(response => response.text()) // Read raw response as text
 .then(text => {
   console.log("⬅️ Raw Response from Server:", text);
