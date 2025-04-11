@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RedoMySite - Professional website redesign services that earn trust and drive business. See your new site before you pay.">
-  <title>RedoMySite - Professional Website Redesign Services</title>
+  <meta charset="UTF-8" />
+  <meta name="description" content="RedoMySite - Premium website redesign services for modern businesses." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RedoMySite - Redesign Services</title>
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,243 +13,403 @@
       theme: {
         extend: {
           colors: {
-            'primary': '#2D3047',   // Sophisticated dark blue-gray
-            'accent': '#FF6B6B',    // Accent color
-            'light-bg': '#F7F9FC',  // Subtle background
+            'primary': '#2D3047',
+            'accent': '#FF6B6B',
+            'light-bg': '#F7F9FC',
+            'off-white': '#F2F3F5',
           },
           fontFamily: {
             'sans': ['Inter', 'system-ui', 'sans-serif'],
             'display': ['Playfair Display', 'serif'],
           },
           boxShadow: {
-            'elegant': '0 10px 30px -10px rgba(0, 0, 0, 0.1)',
-          },
-        },
-      },
+            'elegant': '0 10px 30px -10px rgba(0,0,0,0.1)',
+            'heavy': '0 25px 50px -12px rgba(0,0,0,0.25)',
+          }
+        }
+      }
     }
   </script>
 
-  <!-- Font Awesome (optional icons) -->
+  <!-- FontAwesome (optional icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Google Fonts (Inter, Playfair Display) -->
+  <!-- Example fade-in on scroll (AOS or custom) -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap"
+    href="https://unpkg.com/aos@2.3.4/dist/aos.css"
     rel="stylesheet"
-  >
+  />
+  <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      AOS.init({ duration: 600, once: true });
+    });
+  </script>
 </head>
-<body class="font-sans bg-white text-gray-800">
+<body class="font-sans text-gray-800 bg-white">
 
-  <!-- HEADER START -->
-  <header class="container mx-auto px-4 py-5 flex justify-between items-center">
-    <div class="flex items-center">
+  <!-- HEADER / NAVBAR -->
+  <header class="bg-white w-full py-4 fixed top-0 left-0 z-50 shadow-sm">
+    <div class="container mx-auto px-4 flex items-center justify-between">
       <div class="text-2xl font-display font-bold text-primary">
         Redo<span class="text-accent">My</span>Site
       </div>
-      <div class="hidden ml-2 sm:flex items-center">
-        <span class="h-4 w-px bg-gray-300 mx-3"></span>
-        <span class="text-xs uppercase tracking-widest text-gray-500">Design Studio</span>
-      </div>
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8">
+          <li><a href="#hero" class="hover:text-primary transition-colors">Home</a></li>
+          <li><a href="#why-redesign" class="hover:text-primary transition-colors">Why Redesign</a></li>
+          <li><a href="#how-it-works" class="hover:text-primary transition-colors">How It Works</a></li>
+          <li><a href="#why-us" class="hover:text-primary transition-colors">Why Us</a></li>
+          <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="navToggle" class="md:hidden text-gray-700 text-xl">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
-    <nav class="hidden md:block">
-      <ul class="flex space-x-8">
-        <li><a href="#why-redesign" class="text-gray-700 hover:text-primary">Why Redesign</a></li>
-        <li><a href="#how-it-works" class="text-gray-700 hover:text-primary">How It Works</a></li>
-        <li><a href="#why-us" class="text-gray-700 hover:text-primary">Why Us</a></li>
-        <li><a href="#contact" class="text-gray-700 hover:text-primary">Contact</a></li>
+
+    <!-- MOBILE NAV -->
+    <div id="mobileMenu" class="hidden bg-white border-t border-gray-200">
+      <ul class="flex flex-col space-y-2 p-4">
+        <li><a href="#hero" class="block hover:text-primary transition-colors">Home</a></li>
+        <li><a href="#why-redesign" class="block hover:text-primary transition-colors">Why Redesign</a></li>
+        <li><a href="#how-it-works" class="block hover:text-primary transition-colors">How It Works</a></li>
+        <li><a href="#why-us" class="block hover:text-primary transition-colors">Why Us</a></li>
+        <li><a href="#contact" class="block hover:text-primary transition-colors">Contact</a></li>
       </ul>
-    </nav>
-    <button class="md:hidden text-gray-700" id="mobile-menu-button">
-      <i class="fas fa-bars text-xl"></i>
-    </button>
+    </div>
   </header>
-  <!-- HEADER END -->
 
-  <!-- MOBILE MENU (hidden by default) -->
-  <div id="mobile-menu" class="hidden bg-white w-full py-4 px-6 shadow-md md:hidden">
-    <ul class="space-y-4 mb-4">
-      <li><a href="#why-redesign" class="block text-gray-700 hover:text-primary">Why Redesign</a></li>
-      <li><a href="#how-it-works" class="block text-gray-700 hover:text-primary">How It Works</a></li>
-      <li><a href="#why-us" class="block text-gray-700 hover:text-primary">Why Us</a></li>
-      <li><a href="#contact" class="block text-gray-700 hover:text-primary">Contact</a></li>
-    </ul>
-  </div>
-
-  <!-- HERO SECTION -->
-  <section class="container mx-auto px-4 py-16 md:py-24 text-center">
-    <h1 class="text-4xl md:text-5xl font-display font-bold leading-tight mb-8">
-      Outshine your competitors with a 
-      <span class="relative inline-block px-1">
-        <span class="absolute inset-x-0 bottom-1 h-3 bg-accent opacity-20"></span>
-        <span class="relative">clean, professional website</span>
-      </span>
-      that earns trust.
-    </h1>
-    <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-      We don’t sell. We show. You share your current site or business details, and we build your new homepage—live and working. If you like what you see, you pay. If not, no questions asked. No catch. No follow-up.
-    </p>
-    <a href="#contact" class="inline-block bg-primary text-white font-medium py-3 px-8 rounded-md hover:bg-opacity-90 transition-colors text-lg shadow-elegant">
-      Redesign your site TODAY
-    </a>
+  <!-- HERO SECTION WITH BACKGROUND IMAGE -->
+  <section
+    id="hero"
+    class="relative pt-24 pb-16 flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-4.0.3&auto=format&fit=crop&w=1300&q=80');"
+  >
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative z-10 text-center text-white max-w-2xl mx-auto px-4">
+      <h1 class="text-3xl md:text-5xl font-display font-bold mb-6" data-aos="fade-up">
+        Outshine your competitors with a clean, professional website that earns trust and drives business.
+      </h1>
+      <p class="text-lg md:text-xl mb-8 text-gray-100" data-aos="fade-up" data-aos-delay="100">
+        We don’t sell. We show. You share your site or business details, and we build your new homepage—live. If you like what you see, you pay. If not, no questions asked.
+      </p>
+      <a
+        href="#contact"
+        class="bg-accent hover:bg-opacity-90 text-white px-8 py-3 rounded-md font-medium text-lg transition-colors shadow-elegant inline-block"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        Get a Free Preview
+      </a>
+    </div>
   </section>
 
   <!-- WHY REDESIGN -->
-  <section id="why-redesign" class="bg-light-bg py-16 md:py-24">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <div class="mb-12 text-center">
-        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-3 inline-block">
-          Critical Insights
+  <section id="why-redesign" class="bg-light-bg py-16">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-12">
+        <span class="inline-block text-xs uppercase tracking-widest text-accent font-semibold mb-3">
+          CRITICAL INSIGHTS
         </span>
-        <h2 class="text-3xl font-display font-bold mb-4">
-          Your Website Might Be Costing You
-          <span class="relative inline-block">
-            <span class="absolute inset-x-0 bottom-1 h-3 bg-accent opacity-20"></span>
-            <span class="relative">More Than You Think</span>
-          </span>
+        <h2
+          class="text-2xl md:text-3xl lg:text-4xl font-display font-bold"
+          data-aos="fade-up"
+        >
+          Your Website Might Be Costing You More Than You Think
         </h2>
       </div>
-      <!-- Content highlighting reasons, stats, etc. -->
-      <p class="text-gray-700 mb-6 leading-relaxed">
-        ...
-      </p>
-      <!-- Possibly a highlight box, bullet points, etc. -->
+      <!-- Copy & Stats -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div data-aos="fade-right">
+          <p class="text-gray-700 mb-6 leading-relaxed">
+            In today’s fast-paced digital market, a website is often your brand’s first impression. An outdated design or confusing layout can drive potential customers away. 
+            You might be losing sales or client leads without realizing it.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Your website looks outdated—and it's costing you customers.</li>
+            <li>People check your site and go silent. You never hear back.</li>
+            <li>You know your work is great, but your site doesn’t show it.</li>
+            <li>You’re tired of chasing designers, delays, and vague promises.</li>
+          </ul>
+        </div>
+        <div class="relative" data-aos="fade-left">
+          <img
+            src="https://images.unsplash.com/photo-1603575448364-9023ee2e47df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80"
+            alt="Outdated website concept"
+            class="rounded-lg shadow-elegant object-cover"
+          />
+          <div class="absolute bottom-2 right-2 bg-white bg-opacity-70 p-2 rounded text-sm text-gray-800">
+            75% of consumers judge a company's credibility by its website design
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional info / Secondary CTA -->
+      <div class="mt-12 p-6 bg-white rounded-lg shadow-elegant">
+        <h3 class="text-xl md:text-2xl font-display font-semibold mb-4">
+          Why a Redesign Matters
+        </h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Websites that grab attention and keep people scrolling</li>
+          <li>Beat bigger brands with sharper, more focused design</li>
+          <li>Build credibility—and charge more because you look like the real deal</li>
+        </ul>
+        <p class="mt-6">
+          <a
+            href="#contact"
+            class="inline-block bg-primary text-white px-6 py-3 rounded-md shadow-elegant hover:bg-opacity-90 transition-colors font-medium"
+          >
+            Get a No-Risk Preview
+          </a>
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section id="how-it-works" class="py-16 md:py-24">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <div class="mb-12 text-center">
-        <h2 class="text-3xl font-display font-bold">Exactly How It Works—No Surprises</h2>
-        <p class="text-gray-600 mt-2">We streamline everything so you can see before you pay.</p>
+  <section id="how-it-works" class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-display font-bold" data-aos="fade-up">
+          Exactly How It Works — No Surprises
+        </h2>
+        <p class="text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">
+          We show you the site first, you pay only if you love it.
+        </p>
       </div>
-      <!-- Step timeline or card layout -->
-      <ol class="space-y-8">
-        <li class="flex items-center">
-          <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 font-bold shadow-elegant">01</div>
-          <p class="text-gray-700">
-            You share your current website or business link.
+
+      <!-- Steps with timeline visuals -->
+      <div class="relative border-l border-gray-200 ml-4">
+        <!-- Step 1 -->
+        <div class="mb-10 ml-8" data-aos="fade-right">
+          <div class="absolute w-4 h-4 bg-accent rounded-full -left-2 top-1"></div>
+          <h3 class="text-xl font-display font-semibold mb-2">1. You Share</h3>
+          <p class="text-gray-700 mb-2">
+            Provide your current website or business link, plus key details about your goals, brand, and audience.
           </p>
-        </li>
-        <li class="flex items-center">
-          <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 font-bold shadow-elegant">02</div>
-          <p class="text-gray-700">
-            We rebuild the homepage for free (preview only).
+        </div>
+        <!-- Step 2 -->
+        <div class="mb-10 ml-8" data-aos="fade-right" data-aos-delay="100">
+          <div class="absolute w-4 h-4 bg-accent rounded-full -left-2 top-1"></div>
+          <h3 class="text-xl font-display font-semibold mb-2">2. We Rebuild</h3>
+          <p class="text-gray-700 mb-2">
+            We create a free homepage preview—live and working—so you can feel the improvement before paying.
           </p>
-        </li>
-        <li class="flex items-center">
-          <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 font-bold shadow-elegant">03</div>
-          <p class="text-gray-700">
-            If you love it, you pay and we go live.
+        </div>
+        <!-- Step 3 -->
+        <div class="mb-10 ml-8" data-aos="fade-right" data-aos-delay="200">
+          <div class="absolute w-4 h-4 bg-accent rounded-full -left-2 top-1"></div>
+          <h3 class="text-xl font-display font-semibold mb-2">3. You Approve & Pay</h3>
+          <p class="text-gray-700 mb-2">
+            Only if you love the redesign, you finalize payment. No hidden costs or monthly obligations unless you request ongoing support.
           </p>
-        </li>
-        <li class="flex items-center">
-          <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 font-bold shadow-elegant">04</div>
+        </div>
+        <!-- Step 4 -->
+        <div class="mb-10 ml-8" data-aos="fade-right" data-aos-delay="300">
+          <div class="absolute w-4 h-4 bg-accent rounded-full -left-2 top-1"></div>
+          <h3 class="text-xl font-display font-semibold mb-2">4. Full Ownership</h3>
           <p class="text-gray-700">
-            You own everything—no lock-in, no monthly fees unless you want support.
+            You own everything—domain, files, content. No strings attached.
           </p>
-        </li>
-      </ol>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- WHY US -->
-  <section id="why-us" class="bg-light-bg py-16 md:py-24">
+  <section id="why-us" class="bg-light-bg py-16">
     <div class="container mx-auto px-4 max-w-5xl">
-      <div class="mb-12 text-center">
-        <h2 class="text-3xl font-display font-bold">Built for Speed, Ownership, and Total Clarity</h2>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-display font-bold" data-aos="fade-up">
+          Built for Speed, Ownership, and Total Clarity
+        </h2>
+        <p class="text-gray-600 mt-2 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          No bloated themes. No monthly fees unless you want them. Just pure performance and peace of mind.
+        </p>
       </div>
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Card example -->
-        <div class="bg-white p-8 rounded-lg border border-gray-100 shadow-elegant hover:border-accent transition-colors">
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div
+          class="bg-white p-8 rounded-lg shadow-elegant border border-gray-100 hover:shadow-heavy transition-shadow"
+          data-aos="fade-up"
+        >
           <h3 class="font-display font-semibold text-xl mb-4">Handcrafted Code</h3>
-          <p class="text-gray-700">We don’t use WordPress themes or bloated templates. Everything is built for speed and scalability.</p>
+          <p class="text-gray-700 leading-relaxed">
+            We don’t use WordPress themes or bloated templates. Everything is built for speed and scalability.
+          </p>
         </div>
-        <!-- Repeat for more cards… -->
+        <!-- Card 2 -->
+        <div
+          class="bg-white p-8 rounded-lg shadow-elegant border border-gray-100 hover:shadow-heavy transition-shadow"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <h3 class="font-display font-semibold text-xl mb-4">Lightning-Fast Speed</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Your site will load in under 2 seconds, keeping visitors engaged and boosting SEO rankings.
+          </p>
+        </div>
+        <!-- Card 3 -->
+        <div
+          class="bg-white p-8 rounded-lg shadow-elegant border border-gray-100 hover:shadow-heavy transition-shadow"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h3 class="font-display font-semibold text-xl mb-4">Total Ownership</h3>
+          <p class="text-gray-700 leading-relaxed">
+            You own the domain, files, and content. No lock-ins or forced monthly plans. It’s truly your site.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="bg-white p-8 rounded-lg shadow-elegant border border-gray-100 mt-8 md:mt-12 text-center"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <h3 class="font-display font-semibold text-xl mb-4">See It Before You Pay</h3>
+        <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto">
+          We do all the heavy lifting and provide you a working preview of your new homepage, completely free. You’ll know exactly what you’re getting—no guesswork.
+        </p>
+        <div class="mt-6">
+          <a href="#contact" class="bg-accent text-white px-8 py-3 rounded-md hover:bg-opacity-90 transition-colors font-medium inline-block">
+            Request Your Free Preview
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="py-16 md:py-24">
-    <div class="container mx-auto px-4 max-w-md">
-      <div class="bg-white p-8 rounded-lg shadow-elegant border border-gray-100 text-center">
-        <h3 class="text-2xl font-display font-semibold mb-8">Contact Us Today</h3>
-        <p class="text-gray-700 mb-6">Need more info or your free preview right away?</p>
-        
-        <!-- Email / WhatsApp links -->
-        <div class="mb-4 space-y-3">
-          <a href="mailto:contact@redomysite.com" class="flex items-center justify-center text-gray-700 hover:text-accent">
-            <i class="far fa-envelope mr-2"></i> contact@redomysite.com
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-display font-bold" data-aos="fade-up">
+          Let’s Make Your Business Stand Out
+        </h2>
+        <p class="text-gray-600 mt-2" data-aos="fade-up" data-aos-delay="100">
+          Need more info, or want your free preview right away? Drop us a line.
+        </p>
+      </div>
+
+      <div class="bg-off-white p-8 rounded-lg shadow-elegant border border-gray-100" data-aos="fade-up">
+        <h3 class="text-xl font-display font-semibold mb-4">Contact Us</h3>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          We typically reply within 24 hours. Or, if you prefer, message us on WhatsApp now.
+        </p>
+
+        <!-- Contact Info -->
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0 mb-8">
+          <a
+            href="mailto:contact@yourdomain.com"
+            class="flex items-center space-x-2 text-primary hover:text-accent transition-colors"
+          >
+            <i class="far fa-envelope text-lg"></i>
+            <span>contact@yourdomain.com</span>
           </a>
-          <a href="https://wa.me/?text=Hello%20I%20need%20a%20website%20redesign" class="flex items-center justify-center text-gray-700 hover:text-accent">
-            <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+          <a
+            href="https://wa.me/?text=Hello%20I%20need%20a%20website%20redesign"
+            class="flex items-center space-x-2 text-primary hover:text-accent transition-colors"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fab fa-whatsapp text-lg"></i>
+            <span>WhatsApp</span>
           </a>
         </div>
 
-        <!-- Contact Form -->
-        <form class="text-left" id="contactForm">
-          <div class="mb-4">
+        <!-- Simple Contact Form -->
+        <form id="contactForm" class="space-y-4">
+          <div>
             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-            <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary" required>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-primary focus:border-primary"
+            />
           </div>
-          <div class="mb-4">
+          <div>
             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-            <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary" required>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-primary focus:border-primary"
+            />
           </div>
-          <button type="submit" class="w-full bg-primary text-white py-3 px-8 rounded-md hover:bg-opacity-90 transition-colors text-lg shadow-elegant">
-            Request Free Homepage Preview
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-primary focus:border-primary"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-primary text-white py-3 px-6 rounded-md hover:bg-opacity-90 transition-colors text-lg shadow-elegant font-medium"
+          >
+            Send Message
           </button>
         </form>
         
-        <!-- Success Message -->
-        <p id="form-message" class="mt-4 text-green-600 font-semibold hidden">Thanks! We’ll be in touch soon.</p>
+        <!-- Form success message -->
+        <p id="formSuccess" class="text-green-600 font-semibold mt-4 hidden">
+          Thanks! We’ll be in touch soon.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-primary text-white py-12">
+  <footer class="bg-primary text-white py-10 mt-8">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="mb-6 md:mb-0">
-        <div class="text-2xl font-display font-bold tracking-tight">Redo<span class="text-accent">My</span>Site</div>
-        <p class="text-gray-300 mt-2">Professional website redesign services</p>
+        <h4 class="text-xl font-display font-bold">
+          Redo<span class="text-accent">My</span>Site
+        </h4>
+        <p class="text-gray-300 mt-1">Professional Website Redesign</p>
       </div>
-      <nav>
-        <ul class="flex space-x-8">
-          <li><a href="#why-redesign" class="text-gray-300 hover:text-white">Why Redesign</a></li>
-          <li><a href="#how-it-works" class="text-gray-300 hover:text-white">How It Works</a></li>
-          <li><a href="#why-us" class="text-gray-300 hover:text-white">Why Us</a></li>
-          <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
-        </ul>
-      </nav>
+      <ul class="flex space-x-6 text-gray-300">
+        <li><a href="#hero" class="hover:text-white">Home</a></li>
+        <li><a href="#why-redesign" class="hover:text-white">Why Redesign</a></li>
+        <li><a href="#how-it-works" class="hover:text-white">How It Works</a></li>
+        <li><a href="#why-us" class="hover:text-white">Why Us</a></li>
+        <li><a href="#contact" class="hover:text-white">Contact</a></li>
+      </ul>
     </div>
-    <div class="text-center mt-4 text-sm text-gray-400">
+    <div class="text-center text-sm text-gray-400 mt-4">
       © <span id="year"></span> RedoMySite. All rights reserved.
     </div>
   </footer>
 
-  <!-- Minimal JS for Year + Form -->
+  <!-- BASIC JS -->
   <script>
-    // Auto-update footer year
+    // Update year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Basic form handler (replace with Firebase or any backend)
-    const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('form-message');
-
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // Simulate success
-      formMessage.classList.remove('hidden');
-      contactForm.reset();
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
 
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    // Fake form submit
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formSuccess.classList.remove('hidden');
+      contactForm.reset();
     });
   </script>
 </body>
